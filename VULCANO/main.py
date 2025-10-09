@@ -6,6 +6,7 @@ from PPlay.window import *
 from PPlay.gameobject import *
 from PPlay.gameimage import *
 from biblioteca.menu import*
+from biblioteca.loopjogo import*
 import random
 #criacao do teclado e mouse
 mouse = Mouse()
@@ -24,7 +25,7 @@ RANKING = False
 PLAY = False
 while True:
     if MENU:
-        PLAY, MENU, RANKING = gamemenu(janela, mouse, teclado, menu , PLAY, MENU, RANKING)
-    #if PLAY:
-        #PLAY, MENU, RANKING =
+        PLAY, MENU, RANKING = gamemenu(janela, mouse, teclado, menu, PLAY, MENU, RANKING)
+    if PLAY:
+        PLAY, MENU, RANKING = loopjogo(janela, mouse, teclado, menu, PLAY, MENU, RANKING)
     janela.update()
