@@ -6,7 +6,7 @@ from PPlay.window import *
 from PPlay.gameobject import *
 from PPlay.gameimage import *
 import random
-def gamemenu(janela, mouse, teclado, menu , MENU,PLAY,RANKING):
+def gamemenu(janela, mouse, menu,  teclado , PLAY,MENU,RANKING):
     #-----criacao dos botoes-----#
     #play#
     play = GameObject()
@@ -32,11 +32,11 @@ def gamemenu(janela, mouse, teclado, menu , MENU,PLAY,RANKING):
             PLAY = True
             MENU = False
             return PLAY, MENU, RANKING
-        if mouse.is_over_object(ranking) and mouse.is_button_pressed(1):
+        elif mouse.is_over_object(ranking) and mouse.is_button_pressed(1):
             RANKING = True
             MENU = False
             return PLAY, MENU, RANKING
-        if mouse.is_over_object(sair) and mouse.is_button_pressed(1):
+        elif mouse.is_over_object(sair) and mouse.is_button_pressed(1):
             janela.close()
         menu.draw()
         janela.update()

@@ -7,6 +7,7 @@ from PPlay.gameobject import *
 from PPlay.gameimage import *
 from biblioteca.menu import*
 from biblioteca.loopjogo import*
+from biblioteca.ranking import*
 import random
 #criacao do teclado e mouse
 mouse = Mouse()
@@ -17,15 +18,20 @@ janela_altura = 1080
 janela = Window(janela_largura,janela_altura)
 janela.set_title('VULCANO')
 janela.set_background_color([0,0,0])
-#criacao do menu
+
+gm1 = GameImage('VULCANO/ARTES/jogar1.png')
 menu = GameImage('VULCANO/ARTES/menu.png')
+
 #criacao das variaveis booleanas
 MENU = True
 RANKING = False
 PLAY = False
+
 while True:
-    if MENU:
-        PLAY, MENU, RANKING = gamemenu(janela, mouse, teclado, menu, PLAY, MENU, RANKING)
-    if PLAY:
-        PLAY, MENU, RANKING = loopjogo(janela, mouse, teclado, menu, PLAY, MENU, RANKING)
+    if MENU == True:
+        PLAY, MENU, RANKING = gamemenu(janela, mouse, menu, teclado, PLAY, MENU, RANKING)
+    elif PLAY == True:
+        PLAY, MENU, RANKING = loopjogo(janela, mouse, gm1, teclado, PLAY, MENU, RANKING)
+    elif RANKING == True:
+        ranking(janela)
     janela.update()
