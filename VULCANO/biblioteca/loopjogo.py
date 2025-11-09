@@ -7,10 +7,11 @@ from PPlay.gameobject import *
 from PPlay.gameimage import * 
 from biblioteca.personagem import *
 from biblioteca.lava import *
+from biblioteca.camera import *
 
 
 janela = Window(1920, 1080)
-jogador = Personagem(janela.width/2, janela.height/2, janela.height/12, janela.width/14)
+jogador = Personagem(janela.width/2, janela.height/2, janela.height/11, janela.width/12)
 obstaculo = lava(jogador, janela)
 
 plataforma = Sprite('VULCANO/ARTES/plataforma1.png')
