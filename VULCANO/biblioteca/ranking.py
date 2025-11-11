@@ -7,4 +7,4 @@ from PPlay.gameobject import *
 from PPlay.gameimage import *
 
 def ranking(janela):
-    janela.close()   
+    janela.close()
